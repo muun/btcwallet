@@ -2140,7 +2140,7 @@ func (w *Wallet) GetTransactions(startBlock, endBlock *BlockIdentifier, cancel <
 	// TODO: Fetching block heights by their hashes is inherently racy
 	// because not all block headers are saved but when they are for SPV the
 	// db can be queried directly without this.
-	var startResp, endResp rpcclient.FutureGetBlockVerboseResult
+	var startResp, endResp rpcclient.FutureGetBlockVerboseTxResult
 	if startBlock != nil {
 		if startBlock.hash == nil {
 			start = startBlock.height
